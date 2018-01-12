@@ -49,12 +49,14 @@ for i in range(0,20):
 
     # Tweet the patent
     # twitter.update_status(status=tweet, media_ids=[image_ids['media_id']])
-    twitter.update_status(status=tweet)
+    try:
+        twitter.update_status(status=tweet)
+    except:
+        pass
 
     # Go back
     driver.get('http://stks.freshpatents.com/Facebook-Inc-nm1.php')
 
-    # time.sleep (11000)
-    time.sleep(200) #15 minutes
+    time.sleep(10000) #~3 hours
 
 driver.quit()
